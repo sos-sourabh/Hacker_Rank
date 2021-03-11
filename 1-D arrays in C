@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+void insertion_of_array(int ptr[], int n);
+void Adding_element_array(int ptr_ptr[],int n,int *count);
+int main() {
+    
+    int n,count=0;
+    scanf("%d",&n);
+    int *arr = (int*)malloc(n*sizeof(int));
+    insertion_of_array(arr,n);
+    Adding_element_array(arr,n,&count);
+    printf("%d",count);
+    free(arr);
+    return 0;
+}
+
+void insertion_of_array(int ptr[], int n){
+    int *x=&ptr[0];
+    for(int i=0;i<n;i++){
+        scanf("%d",x);
+        x++;
+    }
+}
+void Adding_element_array(int ptr_ptr[],int n,int *count){
+    for(int i=0; i<n;i++){
+        *count = *count + ptr_ptr[i];
+    }
+}
